@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo rectangle</title>
+</head>
+<body>
+<input type="number" id="rect-width" placeholder="Input Width here...">
+<input type="number" id="rect-height" placeholder="Input Height here...">
+<button onclick="showArea()">Show Area</button>
+<button onclick="showPerimeter()">Show Perimeter</button>
+<p id="result"></p>
+<script>
+    let w=document.getElementById('rect-width');
+    let h=document.getElementById('rect-height');
+    function showArea(){
+        let rect=new Rectangle(w.value,h.value)
+        let result=rect.getArea();
+        showResult(result);
+    }
+
+    function showPerimeter(){
+        let rect=new Rectangle(w.value, h.value);
+        let result=rect.getPerimeter();
+        showResult(result);
+    }
+    function showResult(result){
+        document.getElementById('result').innerHTML='Result: '+result;
+    }
+</script>
+<script src="rectangle.js"></script>
+</body>
+</html>
